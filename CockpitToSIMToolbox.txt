@@ -1,0 +1,19 @@
+
+SIMToolkit native order is (innermost first) phase, angle, z, time.
+Open as Hyperstack in ImageJ.
+Image-->Properties:
+    Make a note of pixel width, pixel height and voxel depth.
+    Channels to # phases
+    Frames to # angles
+    Z to original value / product(n_phases, n_angles)
+    Close with OK.
+Image-->Hyperstacks-->Stacks to hyperstack
+Image-->Hyperstacks-->Re-order hyperstack:
+    channels -> channels
+    slices -> frames
+    frames -> slices
+    OK
+Images-->Hyperstack-->Hyperstack to stack.
+Save to TIF. Data should now be ordered phase, angle, z.
+
+Angles are 36, 96, 156. (To confirm.)
