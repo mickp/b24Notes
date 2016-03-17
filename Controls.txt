@@ -1,0 +1,19 @@
+Main workstation has two network interfaces
+ - one on the diamond network, B24-WS003.dc.diamond.ac.uk
+ - one on a private network, 192.168.1.1
+
+There is a DHCP and DNS server bound to 192.168.1.1. This
+assigns addresses to the cockpit remotes. Remote devices
+are controlled from the hosts as follows:
+
+ cam fixed                    ixon1.b24
+ cam wheel                    ixon2.b24
+ dsp                            dsp.b24
+ emission wheel 1             ixon1.b24
+ light 405nm                    dsp.b24
+ light 488nm                    dsp.b24
+ light 561nm                    dsp.b24
+ light 647nm                    dsp.b24
+ linkam                       ixon1.b24
+ slm                            slm.b24
+ sr470                        sr470.b24
