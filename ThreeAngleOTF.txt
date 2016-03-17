@@ -1,0 +1,112 @@
+DATA ACQUISITION
+================
+
+Locate a bead with a clean background at least 1/4 of the field clear around it (even away from focus).
+
+Laser:  488nm
+Camera: wheel
+Filter: GFP (515)
+
+Set the laser power to 40mW and exposure time to 5ms.
+Set the camera as follows:
+  EM 5MHz
+  EM gain 200
+  clean, no FT  (this is the default setting)
+
+Single-site experiment
+Set up as in fig 001.
+Filename suffix should be
+  PSF-excitation-emission
+  ***THERE MUST BE NO SPACES IN THE FILENAME***
+Click 'Update' to set timestamp on file.
+Click 'Start' to run.
+
+
+ANALYSIS
+========
+Open the VM.
+***NEVER CLOSE softWoRx***
+***NEVER LOG OUT OF THE VM***
+***TO CLOSE THE VM, CLICK THE TOP RH 'X', CHOOSE 'SAVE MACHINE STATE' THEN CLICK 'OK'***
+(Figure CloseVM)
+username: map
+password: micron1
+softWoRx will be running.
+Figure 002
+Close any open image windows.  ***DO NOT CLOSE THE MAIN SOFTWORX WINDOW OR TERMINAL***
+Figure 003
+softWoRx window: 
+	* File->Open
+	Open the data file you acquired.
+Image window: 
+	Use left scrollbar to shift focal plane and find your bead.
+	* Image window: File->Save
+	Drag the save window to the right of the image window.
+	* Save window: Select Region
+	Drag a red box around the bead in the image window.
+	* Save window: Details...
+	* Region details window: adjust X/Y/Width/Height to centre bead in a 256x256 box
+	Figure 004
+	* Region details window: close
+	* Save file window: add '-CROP' in 'Output' between 'SI' and '.dv' (Figure 005)
+	* Save file window: 'Do it'
+	This:
+		saves the cropped region to a new file, 
+		closes your original file,
+		opens the crop file.
+	Close the crop file for now.
+
+
+	=== Widefield PSF generation ===
+	softWoRx window: Process->Generate Widefield from SI Image
+		opens the 'Generate OMX Widefield Image' window.
+		Click 'Input' and choose the crop file.
+		This also populates the Output filename field - leave it as it is.
+		Check the 'Average directions' box.
+		(Figure 006)
+		Click 'Do it'.
+		This closes your cropped image and opens the pseudo-widefield (WF) image.
+		Close the pseudo-WF window.
+
+
+	=== Angle extraction ===  will repeat 3 times
+	* Open the cropped image.
+	* Cropped image window: File->Save
+	* Save window: Details...
+	* Details window
+		Find 'Z row: Start/End/Inc'
+		make a note of End (should be 1140 if following acquisition instructions)
+		First run through: 
+			set End to original value / 3 (380)
+		Second run through:
+			set Start to (original value / 3) + 1  (381)
+			set End to (2 * original value / 3)   (760)
+		Third run through:
+			set Start to (2 * original value / 3) + 1   (761)
+			set End to original End value   (1140)
+		click 'Close'
+	* Save window: 
+		First run through:
+			replace 'CROP' in filename with 'A0'
+		Second run through:
+			replace 'CROP' in filename with 'A1'
+		Third run through:
+			replace 'CROP' in filename with 'A2'
+		click 'Do it'
+	This:
+	 	saves angle-N slices to new file
+	 	closes the crop file
+	 	opens the a0 file
+	Reopen the crop file and repeat from === Angle extraction === for a total of 3 times.
+
+	For each angle file:
+		softWoRx window: Process -> Make OMX OTF
+			Opens the OMX Create OTF window.
+		OMX Create OTF window:
+			click PSF-File, choose an angle file
+			This creates a filename in the OTF file box.
+			Change the OTF file name so that it ends with the angle number (A0, A1, A2)
+			Uncheck 'Leave KZ'
+			Uncheck 'Do bead compensation calculation'
+			(Figure 007)
+			Click 'Do it'
