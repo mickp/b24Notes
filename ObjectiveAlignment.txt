@@ -1,0 +1,13 @@
+Turn on the SLM. At the DSP box, move the SLM trigger cable from line 10 to DDS_CLK.
+Turn on the 488nm laser. Use the DSP TTL controls to turn the beam on.
+Use the SLM advanced controls to set the SI diffraction angle to 0.595 degrees. Generate SIM sequence with:
+  wavelength: 488
+  total angles: 3
+  total phases: 1
+  order: 0
+
+At the back of the objective, you should now see a rapidly blinking pattern of seven spots - six in a hexagon and one at the centre.
+
+Place a coverslip across the back of the objective.  Align the mirror so that, at the tube lens, the pattern reflected from the coverslip exactly overlays the incident pattern. The incident beam is now close to parallel to the objective's axis. Remove the coverslip.
+
+With an SI diffraction angle of 0.595 degrees, if the objective is aligned correctly, all six outer spots will just propogate through the objective, with each spot clipped slightly. Use the fine thread screws in the objective mount to translate the objective until all six outer spots are just visible. If it is not possible to observe all six spots, iteratively make very small adjustments to on the mirror and the corresponding axis on the objective.
