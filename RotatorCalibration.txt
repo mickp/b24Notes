@@ -1,0 +1,30 @@
+***SI angles***
+The SLM generates spots at three difference angles for SI microscopy. In SLM space, angles are measured clockwise, with zero along the horizontal axis. To avoid scattering by pixels on the horizontal and vertical axis, the orientations of the SI spots are offset by 1/5th of a circle. Thus, in SLM space, the spot orientations are:
+  angle 0:  72  (252) degrees 
+  angle 1:  192 (12) degrees
+  angle 2:  312 (132) degrees
+
+
+***Polarization filter***
+There is a polarizing filter mounted in a Newport RM25A rotational mount. The mount scale is off by 2 degrees: the polarizer is vertically aligned when the scale reads 2 degrees.
+
+
+***Calibration***
+The polarization rotator needs to be calibrated so that, for each SI angle, the axis of polarization is perpendicular to the orientation of the spots. The calibration procedure is as follows.
+
+The polarization filter is first aligned with the spot orientation, then the 'Rotator Sweep' experiment in cockpit sweeps the rotator voltage whilst observing the intensity of light transmitted through the filter. For increased accuracy, the polarization filter is then rotated by 90 degrees, and the sweep and observation repeated. The ratio of the two intensity curves indicates the calibration voltage.
+
+The angle that the rotator filter must be set to for each SI angle depends on which way around the filter is placed in the optical path: travelling along the path from the SLM, the path encounters either the scale or the fixed mount body first.
+
+                fixed body first                   scale first
+             parallel    perpendicular        parallel    perpendicular
+  angle 0    20  (200)   110 (290)            164 (344)   74  (254)
+  angle 1    140 (320)   50  (230)            104 (284)   14  (194)
+  angle 2    80  (260)   170 (350)            44  (224)   134 (314)
+
+
+example: angle 0, fixed body first in SLM-to-polarizer path, polarizer parallel to spot axis
+    2 (scale offset)
+    + 90 (vertical to horizontal) 
+    - 72 (spot angle, clockwise) 
+    = 20
