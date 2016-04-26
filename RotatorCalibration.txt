@@ -27,3 +27,11 @@ example: angle 0, fixed body first in SLM-to-polarizer path, polarizer parallel 
     2 (scale offset)
     - 72 (spot angle, clockwise) 
     = 20
+
+
+***Calibration with a polarimeter***
+If calibrating with the Micron polarimeter just before objective, the required polarization
+angles at the polarimeter are:
+  angle 0: 72
+  angle 1: 12
+  angle 2: -48
