@@ -6,7 +6,7 @@ The SLM generates spots at three difference angles for SI microscopy. In SLM spa
 
 
 ***Polarization filter***
-There is a polarizing filter mounted in a Newport RM25A rotational mount. The mount scale is off by 2 degrees: the polarizer is vertically aligned when the scale reads 2 degrees.
+There is a polarizing filter mounted in a Newport RM25A rotational mount. The mount scale is off by 2 degrees: the polarizer is horizontally aligned when the scale reads 2 degrees.
 
 
 ***Calibration***
@@ -17,14 +17,13 @@ The polarization filter is first aligned with the spot orientation, then the 'Ro
 The angle that the rotator filter must be set to for each SI angle depends on which way around the filter is placed in the optical path: travelling along the path from the SLM, the path encounters either the scale or the fixed mount body first.
 
                 fixed body first                   scale first
-             parallel    perpendicular        parallel    perpendicular
-  angle 0    20  (200)   110 (290)            164 (344)   74  (254)
-  angle 1    140 (320)   50  (230)            104 (284)   14  (194)
-  angle 2    80  (260)   170 (350)            44  (224)   134 (314)
+             perpendicular  parallel          perpendicular  parallel
+  angle 0    20  (200)      110 (290)         164 (344)      74  (254)
+  angle 1    140 (320)      50  (230)         104 (284)      14  (194)
+  angle 2    80  (260)      170 (350)         44  (224)      134 (314)
 
 
 example: angle 0, fixed body first in SLM-to-polarizer path, polarizer parallel to spot axis
     2 (scale offset)
-    + 90 (vertical to horizontal) 
     - 72 (spot angle, clockwise) 
     = 20
