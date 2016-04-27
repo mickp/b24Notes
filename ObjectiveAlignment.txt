@@ -1,13 +1,26 @@
+Place a coverslip across the back of the objective. Use video mode with:
+  488nm illumination
+  'reflected' camera
+  520nm filter
+
+Adjust the objective mirror so that the image of the pupil reflected from the coverslip is exactly coincident with the pupil itself. The incident beam is now close to parallel to the objective's axis. Remove the coverslip and stop video mode.
+
 Turn on the SLM. At the DSP box, move the SLM trigger cable from line 10 to DDS_CLK.
-Turn on the 488nm laser. Use the DSP TTL controls to turn the beam on.
-Use the SLM advanced controls to set the SI diffraction angle to 0.595 degrees. Generate SIM sequence with:
+Turn on the 488nm laser and set the power to 40mW. 
+Use the DSP TTL controls to turn the 488nm line on. 
+Use the SLM advanced controls to set the SI diffraction angle to 0.595 degrees. 
+Use the SLM advanced controls to generate a SIM sequence with:
   wavelength: 488
   total angles: 3
   total phases: 1
   order: 0
 
-At the back of the objective, you should now see a rapidly blinking pattern of seven spots - six in a hexagon and one at the centre.
+Close down the iris before the laser periscope so that the zero-order spot has clear
+airy diffraction rings. The first-order spots will also have airy rings.
 
-Place a coverslip across the back of the objective.  Align the mirror so that, at the tube lens, the pattern reflected from the coverslip exactly overlays the incident pattern. The incident beam is now close to parallel to the objective's axis. Remove the coverslip.
+At the back of the objective, you should now see a rapidly blinking pattern of seven spots - six in a hexagon and one at the centre. There may be stray spots, which can be discriminated from the spots of interest by the absence of airy rings.
 
-With an SI diffraction angle of 0.595 degrees, if the objective is aligned correctly, all six outer spots will just propogate through the objective, with each spot clipped slightly. Use the fine thread screws in the objective mount to translate the objective until all six outer spots are just visible. If it is not possible to observe all six spots, iteratively make very small adjustments to on the mirror and the corresponding axis on the objective.
+With an SI diffraction angle of 0.58 degrees, if the objective is aligned correctly, all six outer spots will just propogate through the objective, with each spot clipped slightly. Use the fine thread screws in the objective mount to translate the objective until all six outer spots are just visible.
+
+Replace the SLM trigger cable into socket D10 on the DSP.
+Reopen the iris before the laser periscope so that the beam just fills the SLM.
