@@ -3,8 +3,8 @@ SIMToolkit native order is (innermost first) phase, angle, z, time.
 Open as Hyperstack in ImageJ.
 Image-->Properties:
     Make a note of pixel width, pixel height and voxel depth.
-    Channels to # phases
-    Frames to # angles
+    Channels to # phases (5)
+    Frames to # angles (3)
     Z to original value / product(n_phases, n_angles)
     Close with OK.
 Image-->Hyperstacks-->Stacks to hyperstack
